@@ -7,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+
+    <button>Press Me</button>
     
+    <script>
+        console.log("Hello, world!");
+
+        let message = "Buttstalion says 'Hello.'", user = "Jacob";
+        alert(user + ', ' + message);
+
+        const MAX = 57;
+        console.log(MAX + ' is the highest number allowed.');
+        console.log(`${user}, the revolution will not be televised.`);
+
+        const button = document.querySelector('button');
+        function greet() {
+            const name = prompt('What is your name?');
+            alert(`Hello ${name}, nice to see you!`);
+        }
+
+        button.addEventListener('click', greet);
+    </script>
 </body>
 </html>
