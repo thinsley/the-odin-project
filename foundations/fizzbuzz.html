@@ -10,7 +10,10 @@
     <script>
         let userInput = parseInt(prompt("Please enter a number: "));
 
+        //Looping structure
         for (let i = 1; i <= userInput; i++) {
+            //Fizzbuzz logic. If the counter is divisible by both, it prints fizzbuzz, else if divisible by 3
+            //then prints fizz, else if divisible by 5 it prints buzz, else it prints the counter.
             if (i % 3 == 0 && i % 5 == 0) console.log("Fizzbuzz");
             else if (i % 3 == 0) console.log("Fizz");
             else if (i % 5 == 0) console.log("Buzz");
