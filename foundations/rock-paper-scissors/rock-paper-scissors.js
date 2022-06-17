@@ -27,7 +27,6 @@ function playGame() {
     }
 }
 
-
 //Function to start a new round. Prompts the use for their move and calls the function to generate a computer move.
 function playRound(roundCounter, userScore, computerScore) {
     let scores = [userScore, computerScore]
@@ -82,10 +81,12 @@ function computerPlay() {
     return computerMove;
 }
 
+//Welcome messages
 console.log("Welcome to Rock, Paper, Scissors!");
 console.log("------------------------------------")
 console.log("This will be a best of 5 game. First to 3 wins is the winner.")
 
+//Main game call
 playGame();
-
+console.log("Thank you for playing the game. See you next time!");
 //console.log(userInput);
