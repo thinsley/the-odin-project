@@ -29,3 +29,23 @@ divBox.appendChild(meToo);
 
 container.appendChild(divBox);
 
+//Events Exercises
+
+//Method 2
+// const btn = document.querySelector("#btn");
+// btn.onclick = () => alert("Hello World, method 2");
+
+// //Method 3 (PREFERRED)
+// const btn3 = document.querySelector("#btn3");
+// btn3.addEventListener('click', function (e) {
+//     e.target.style.background = "blue";
+//     //Turns the background of btn3 blue
+//     alert("Hello World Listener");
+// });
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.id);
+    });
+});
