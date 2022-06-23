@@ -15,40 +15,46 @@ function playGame() {
     // console.log(gameButtons);
     gameButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            if (userScore >= 3 || computerScore >= 3) {
-                //Game win logic
-                if(userScore > computerScore) {
-                    gameResultElement.textContent = "You win! You had " + userScore + " wins while your opponent had "+ computerScore + ".";
-                }
-                else if(userScore < computerScore) {
-                    gameResultElement.textContent = "Unfortunately, you lost. You had " + userScore + " wins while your opponent had "+ computerScore + ".";
-                }
-                else {
-                    gameResultElement.textContent = "It's a tie! You both had " + userScore + ", making it a tie.";
-                }
-                divContainer.appendChild(gameResultElement);
-                gameState = false;
-            }
-            else {
                 userWinState = playRound(button.id);
                 if(userWinState == "true") {
                     userScore++;
-                    roundResultElement.textContent = "Congratulations, you won! The score is now " + userScore + ":" + computerScore;
+                    roundResultElement.textContent = "Congratulations, you won the round! The score is now " + userScore + ":" + computerScore;
                     // console.log("Congratulations, you won! Your " + userInput + " beats their " + computerMove + "!");
+                    if(userScore == 3) {
+                        gameResultElement.textContent = "You win! You had " + userScore + " wins while your opponent had "+ computerScore + ".";
+                        divContainer.appendChild(gameResultElement);
+                    }
                 }
                 else if(userWinState == "tie") {
                     userScore++;
                     computerScore++;
-                    roundResultElement.textContent = "Unfortunately, it was a tie! The score is now " + userScore + ":" + computerScore;
+                    roundResultElement.textContent = "It's a tie! The score is now " + userScore + ":" + computerScore;
                     // console.log("Unfortunately, it was a tie! You both chose " + userInput);
+                    if(userScore == 3 && computerScore == 3) {
+                        gameResultElement.textContent = "Unfortunately, you lost. You had " + userScore + " wins while your opponent had "+ computerScore + ".";
+                        divContainer.appendChild(gameResultElement);
+                    }
+                    else if(userScore == 3) {
+                        gameResultElement.textContent = "You win! You had " + userScore + " wins while your opponent had "+ computerScore + ".";
+                        divContainer.appendChild(gameResultElement);
+                    }
+                    else if(computerScore == 3) {
+                        gameResultElement.textContent = "Unfortunately, you lost. You had " + userScore + " wins while your opponent had "+ computerScore + ".";
+                        divContainer.appendChild(gameResultElement);
+                    }
                 }
                 else {
                     computerScore++;
-                    roundResultElement.textContent = "Bummer, you lost. The score is now " + userScore + ":" + computerScore;
+                    roundResultElement.textContent = "Bummer, you lost the round. The score is now " + userScore + ":" + computerScore;
                     // console.log("Bummer, you lost. Their " + computerMove + " beats your " + userInput)
+                    
+                    if(computerScore == 3) {
+                        gameResultElement.textContent = "Unfortunately, you lost. You had " + userScore + " wins while your opponent had "+ computerScore + ".";
+                        divContainer.appendChild(gameResultElement);
+                    }
                 }
                 divContainer.appendChild(roundResultElement);
-            }
+            // }
         });
         //Learning Note: When you pass a function directly to eventLisener, it executes the function immediately.
     });
