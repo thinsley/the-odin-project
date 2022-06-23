@@ -44,8 +44,11 @@ container.appendChild(divBox);
 // });
 
 const buttons = document.querySelectorAll('button');
+//buttons now stores a nodelist of all buttons
 buttons.forEach((button) => {
+    //iterates through all buttons and attached listener event
     button.addEventListener('click', () => {
+        //alerts the ID of the button
         alert(button.id);
     });
 });
