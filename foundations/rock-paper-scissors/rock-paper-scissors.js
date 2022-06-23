@@ -5,15 +5,15 @@ function playGame() {
     let roundCounter = 1;
     let roundScores;
 
-    //Core game loop
-    while(userScore < 3 && computerScore < 3) {
-        roundScores = playRound(roundCounter, userScore, computerScore);
+    // //Core game loop
+    // while(userScore < 3 && computerScore < 3) {
+    //     roundScores = playRound(roundCounter, userScore, computerScore);
         
-        //Get the round scores from the array and iterate the round counter
-        userScore = roundScores[0];
-        computerScore = roundScores[1];
-        roundCounter++;
-    }
+    //     //Get the round scores from the array and iterate the round counter
+    //     userScore = roundScores[0];
+    //     computerScore = roundScores[1];
+    //     roundCounter++;
+    // }
     
     //Game win logic
     if(userScore > computerScore) {
@@ -82,11 +82,19 @@ function computerPlay() {
 }
 
 //Welcome messages
-console.log("Welcome to Rock, Paper, Scissors!");
-console.log("------------------------------------")
-console.log("This will be a best of 5 game. First to 3 wins is the winner.")
+// console.log("Welcome to Rock, Paper, Scissors!");
+// console.log("------------------------------------")
+// console.log("This will be a best of 5 game. First to 3 wins is the winner.")
+
+const gameButtons = document.querySelectorAll("button");
+console.log(gameButtons);
+gameButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log(button.id);
+    })
+})
 
 //Main game call
-playGame();
-console.log("Thank you for playing the game. See you next time!");
+//playGame();
+//console.log("Thank you for playing the game. See you next time!");
 //console.log(userInput);
