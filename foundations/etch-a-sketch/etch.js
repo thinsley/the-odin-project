@@ -8,3 +8,11 @@ for (let i=0; i<256; i++) {
     childDiv.classList.add("child");
     papaContainer.appendChild(childDiv);
 }
+
+//Hover logic
+const childList = document.querySelectorAll(".child");
+childList.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+        div.classList.add("hover")
+    });
+});

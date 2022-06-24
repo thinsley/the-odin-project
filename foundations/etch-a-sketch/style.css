@@ -5,10 +5,15 @@
     margin: 0 auto;
 }
 
-div.child {
+.child {
     border: solid;
-    background-color: olive;
+    background-color: gray;
     flex-basis: 5.2%;
     flex-grow: 1;
     margin: 1px;
+}
+
+.child:hover {
+    border:solid;
+    background-color: red;
 }
