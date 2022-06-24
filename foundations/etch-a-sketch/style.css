@@ -1,0 +1,14 @@
+#papa-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+div.child {
+    border: solid;
+    background-color: olive;
+    flex-basis: 5.2%;
+    flex-grow: 1;
+    margin: 1px;
+}
