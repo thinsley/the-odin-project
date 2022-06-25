@@ -31,6 +31,10 @@ gridButton.addEventListener('click', () => {
                 childList.forEach((div) => {
                     div.addEventListener('mouseover', () => {
                         div.classList.add("hover");
+                        const red = Math.floor(Math.random() * 255);
+                        const green = Math.floor(Math.random() * 255);
+                        const blue = Math.floor(Math.random() * 255);
+                        div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
                     });
                 });
             }
