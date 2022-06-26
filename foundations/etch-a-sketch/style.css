@@ -6,16 +6,9 @@
 }
 
 .child {
-    /* border: solid; */
     background-color: gray;
     text-align: center;
-    /* flex-basis: 6.25%; */
     flex-grow: 1;
-    /* margin: 1px; */
-}
-
-.child.hover {
-    background-color: red;
 }
 
 .newGrid {
