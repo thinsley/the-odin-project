@@ -12,9 +12,10 @@ function setupGrid(gridFactor) {
 //Create grid based on user input
     for (let i=0; i<(gridFactor*gridFactor); i++) {
         const childDiv = document.createElement("div");
-        childDiv.textContent = i;
+        // childDiv.textContent = &nbsp;
         childDiv.classList.add("child");
         childDiv.style.flexBasis = 100/gridFactor + "%"; //Makes the grid wrap at the desired gridlength
+        childDiv.style.minHeight = 1000/gridFactor + "px"; //Makes the height of the squares equal to the length
         papaContainer.appendChild(childDiv);
 
         //Hover logic
