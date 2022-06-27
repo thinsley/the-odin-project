@@ -16,8 +16,26 @@ function setupGrid(gridFactor) {
         childDiv.classList.add("child");
         childDiv.style.flexBasis = 100/gridFactor + "%"; //Makes the grid wrap at the desired gridlength
         papaContainer.appendChild(childDiv);
+
+        //Hover logic
+        const childList = document.querySelectorAll(".child");
+        childList.forEach((div) => {
+            div.addEventListener('mouseover', () => {
+                div.classList.add("hover");
+                //Generates a random RGB value for the background color
+                const red = Math.floor(Math.random() * 255);
+                const green = Math.floor(Math.random() * 255);
+                const blue = Math.floor(Math.random() * 255);
+                div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            });
+        });
     }
 }
+
+window.onload = () => {
+    setupGrid(DEFAULT_SIZE)
+}
+
 //Define parent container
 const papaContainer = document.querySelector("#papa-container");
 const gridButton = document.querySelector(".newGrid");
@@ -32,19 +50,6 @@ gridButton.addEventListener('click', () => {
             //Remove old grid
             removeGrid();
             setupGrid(gridFactor);
-
-            //Hover logic
-            const childList = document.querySelectorAll(".child");
-            childList.forEach((div) => {
-                div.addEventListener('mouseover', () => {
-                    div.classList.add("hover");
-                    //Generates a random RGB value for the background color
-                    const red = Math.floor(Math.random() * 255);
-                    const green = Math.floor(Math.random() * 255);
-                    const blue = Math.floor(Math.random() * 255);
-                    div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-                });
-            });
         }
     }
     catch (e) {
@@ -52,7 +57,3 @@ gridButton.addEventListener('click', () => {
         gridFactor = 16;
     }
 });
-
-window.onload = () => {
-    setupGrid(DEFAULT_SIZE)
-}
